@@ -1,10 +1,10 @@
 import { Reg } from '../other/reg'
 
 export enum TokenTypes {
-  Paren,
-  Name,
-  Number,
-  String
+  Paren = 'paren',
+  Name = 'name',
+  Number = 'number',
+  String = 'string'
 }
 
 export interface Token {

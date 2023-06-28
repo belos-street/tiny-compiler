@@ -55,7 +55,7 @@ export function createNumberLiteralNode(value: string): NumberLiteralNode {
   }
 }
 
-export function createCallExpression(name: string): CallExpressionNode {
+export function createCallExpressionNode(name: string): CallExpressionNode {
   return {
     type: NodeTypes.CallExpression,
     name,
