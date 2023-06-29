@@ -33,6 +33,9 @@ export function traverser(rootNode: RootNode, visitor: Visitor) {
     const methods = visitor[node.type]
     methods && methods.enter(node, parent)
 
+    /**
+     *  Program 和 CallExpression 类型都需要深度遍历
+     */
     switch (node.type) {
       case NodeTypes.Program:
         traverArray(node.body, node)
@@ -42,11 +45,12 @@ export function traverser(rootNode: RootNode, visitor: Visitor) {
         break
       case NodeTypes.NumberLiteral:
         break
+      case NodeTypes.StringLiteral:
+        break
       default:
         break
     }
 
-    /** 执行exit */
     methods && methods.exit && methods.exit(node, parent)
   }
   traverNode(rootNode)
